@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMaker.Hardware.Api", "CoffeeMaker.Hardware.Api\CoffeeMaker.Hardware.Api.csproj", "{C8990CE7-66C1-486A-A48E-9AC3CB0758A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMaker.Adapters", "CoffeeMaker.Adapters\CoffeeMaker.Adapters.csproj", "{2347F31C-978C-466A-8C57-C3CFC17629E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMaker.WebApi", "CoffeeMaker.WebApi\CoffeeMaker.WebApi.csproj", "{610DCBF3-811C-4278-9DC2-A38D9FB370EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8990CE7-66C1-486A-A48E-9AC3CB0758A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8990CE7-66C1-486A-A48E-9AC3CB0758A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8990CE7-66C1-486A-A48E-9AC3CB0758A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8990CE7-66C1-486A-A48E-9AC3CB0758A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2347F31C-978C-466A-8C57-C3CFC17629E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2347F31C-978C-466A-8C57-C3CFC17629E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2347F31C-978C-466A-8C57-C3CFC17629E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2347F31C-978C-466A-8C57-C3CFC17629E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{610DCBF3-811C-4278-9DC2-A38D9FB370EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{610DCBF3-811C-4278-9DC2-A38D9FB370EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{610DCBF3-811C-4278-9DC2-A38D9FB370EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{610DCBF3-811C-4278-9DC2-A38D9FB370EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
