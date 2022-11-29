@@ -1,47 +1,52 @@
-﻿using CoffeeMaker.Hardware.Api;
+﻿using CoffeeMaker.Adapters.StateMachines;
+using CoffeeMaker.Hardware.Api;
 
 namespace CoffeeMaker.Adapters;
 
 public class Boiler : ICoffeeMaker
 {
+    private readonly CoffeeMakerStateMachine _stateMachine;
+
+    public Boiler(CoffeeMakerStateMachine stateMachine)
+    {
+        _stateMachine = stateMachine ?? throw new ArgumentNullException(nameof(stateMachine));
+    }
+
     public BoilerStatus GetBoilerStatus()
     {
-        throw new NotImplementedException();
+        return _stateMachine.BoilerStatus;
     }
+
+    public void SetReliefValveState(ReliefValveState state)
+    {
+        _stateMachine.ReliefValveState = state;
+    }
+
+    public void SetBoilerState(BoilerState state)
+    {
+        _stateMachine.BoilerState = state;
+    }
+
+    // Below follows interface members not implemented in this adapter
 
     public BrewButtonStatus GetBrewButtonStatus()
     {
         throw new NotImplementedException();
     }
 
-    public void SetReliefValveState(ReliefValveState state)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void SetBoilerState(BoilerState state)
-    {
-        throw new NotImplementedException();
-    }
-
-    // Below follows interface members not implemented in this adapter
-
     public WarmerPlateStatus GetWarmerPlateStatus()
     {
-        // Boilerplate code
         throw new NotImplementedException();
     }
 
     public void SetIndicatorState(IndicatorState state)
     {
-        // Boilerplate code
         throw new NotImplementedException();
     }
 
 
     public void SetWarmerState(WarmerState state)
     {
-        // Boilerplate code
         throw new NotImplementedException();
     }
 

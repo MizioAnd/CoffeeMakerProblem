@@ -15,18 +15,18 @@ public class RemoveOrInsertPotController : ControllerBase
 
     public RemoveOrInsertPotController(ILogger<RemoveOrInsertPotController> logger, Warmer warmer, CoffeeMakerStateMachine stateMachine)
     {
-        _logger = logger;
-        _warmer = warmer;
-        _stateMachine = stateMachine;
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _warmer = warmer ?? throw new ArgumentNullException(nameof(warmer));
+        _stateMachine = stateMachine ?? throw new ArgumentNullException(nameof(stateMachine));
     }
 
-    [HttpGet(Name = "GetRemoveOrInsertCan")]
+    [HttpGet(Name = "GetRemoveOrInsertPot")]
     public async Task<ActionResult<string>> Get()
     {
         return  Ok(_warmer.GetWarmerPlateStatus().ToString());
     }
 
-    [HttpPost(Name = "PostRemoveOrInsertCan")]
+    [HttpPost(Name = "PostRemoveOrInsertPot")]
     public async Task<ActionResult<string>> Post()
     {
         if (_warmer.GetWarmerPlateStatus() is WarmerPlateStatus.POT_EMPTY || _warmer.GetWarmerPlateStatus() is WarmerPlateStatus.POT_NOT_EMPTY)

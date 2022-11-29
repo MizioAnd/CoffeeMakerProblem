@@ -9,12 +9,17 @@ public class BrewButton : ICoffeeMaker
 
     public BrewButton(CoffeeMakerStateMachine stateMachine)
     {
-        _stateMachine = stateMachine;
+        _stateMachine = stateMachine ?? throw new ArgumentNullException(nameof(stateMachine));
     }
 
     public BrewButtonStatus GetBrewButtonStatus()
     {
         return _stateMachine.BrewButton;
+    }
+
+    public void SetIndicatorState(IndicatorState state)
+    {
+        _stateMachine.IndicatorState = state;
     }
 
     // Below follows interface members not implemented in this adapter
@@ -34,10 +39,6 @@ public class BrewButton : ICoffeeMaker
         throw new NotImplementedException();
     }
 
-    public void SetIndicatorState(IndicatorState state)
-    {
-        throw new NotImplementedException();
-    }
 
     public void SetReliefValveState(ReliefValveState state)
     {

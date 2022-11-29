@@ -1,5 +1,6 @@
 using CoffeeMaker.Adapters;
 using CoffeeMaker.Adapters.StateMachines;
+using CoffeeMaker.WebApi.Services;
 
 public class Program
 {
@@ -41,6 +42,7 @@ public class Program
         services.AddSingleton<Warmer>();
         services.AddSingleton<Boiler>();
         services.AddSingleton<CoffeeMakerStateMachine>();
+        services.AddSingleton<BrewingCycleService>();
     }
 }
 
