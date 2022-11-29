@@ -4,7 +4,7 @@ using CoffeeMaker.WebApi.Services;
 
 public class Program
 {
-    static public void Main(String[] args)
+    public static void Main(String[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
