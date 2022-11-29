@@ -21,19 +21,19 @@ public class BrewButtonController : ControllerBase
     }
 
     [HttpGet(Name = "GetBrewButton")]
-    public string Get()
+    public async Task<ActionResult<string>> Get()
     {
-        return _brewButton.GetBrewButtonStatus().ToString();
+        return Ok(_brewButton.GetBrewButtonStatus().ToString());
     }
 
     [HttpPost(Name = "PostBrewButton")]
-    public string Post()
+    public async Task<ActionResult<string>> Post()
     {
         if (_brewButton.GetBrewButtonStatus() == BrewButtonStatus.NOT_PUSHED)
             _stateMachine.BrewButton = BrewButtonStatus.PUSHED;
         else
             _stateMachine.BrewButton = BrewButtonStatus.NOT_PUSHED;
 
-        return  _stateMachine.BrewButton.ToString();
+        return  Ok(_stateMachine.BrewButton.ToString());
     }
 }

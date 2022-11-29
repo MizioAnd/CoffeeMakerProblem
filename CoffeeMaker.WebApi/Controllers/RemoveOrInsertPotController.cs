@@ -21,13 +21,13 @@ public class RemoveOrInsertPotController : ControllerBase
     }
 
     [HttpGet(Name = "GetRemoveOrInsertCan")]
-    public string Get()
+    public async Task<ActionResult<string>> Get()
     {
-        return  _warmer.GetWarmerPlateStatus().ToString();
+        return  Ok(_warmer.GetWarmerPlateStatus().ToString());
     }
 
     [HttpPost(Name = "PostRemoveOrInsertCan")]
-    public string Post()
+    public async Task<ActionResult<string>> Post()
     {
         if (_warmer.GetWarmerPlateStatus() is WarmerPlateStatus.POT_EMPTY || _warmer.GetWarmerPlateStatus() is WarmerPlateStatus.POT_NOT_EMPTY)
             _stateMachine.WarmerPlateStatus = WarmerPlateStatus.WARMER_EMPTY;
@@ -36,6 +36,6 @@ public class RemoveOrInsertPotController : ControllerBase
         else if (_stateMachine.PotStatus == PotStatus.POT_NOT_EMPTY)
             _stateMachine.WarmerPlateStatus = WarmerPlateStatus.POT_NOT_EMPTY;
 
-        return  _stateMachine.WarmerPlateStatus.ToString();
+        return  Ok(_stateMachine.WarmerPlateStatus.ToString());
     }
 }
